@@ -7,3 +7,4 @@ import { CommonModule } from '@angular/common';
 export class DataModelsModule {}
 
 export { Authenticate } from './authenticate';
+export { User } from './user';

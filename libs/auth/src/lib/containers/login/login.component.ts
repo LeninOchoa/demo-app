@@ -13,6 +13,6 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   login(authenticate: Authenticate) {
-    this.authService.login(authenticate).subscribe();
+    this.authService.login(authenticate).subscribe(s => console.log(s));
   }
 }

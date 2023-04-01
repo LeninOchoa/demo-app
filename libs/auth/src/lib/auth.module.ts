@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './containers/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { MaterialModule } from '@demo-app/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { MaterialModule } from '@demo-app/material';
     RouterModule.forChild(authRoutes),
     RouterModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   declarations: [LoginComponent, LoginFormComponent],
 })
