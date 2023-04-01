@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Authenticate} from "@demo-app/data-models";
 
 @Component({
   selector: 'demo-app-login-form',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent {
-  login(authenticate:any) {
-    console.log(authenticate);
+  // eslint-disable-next-line @angular-eslint/no-output-native
+  @Output() submit = new EventEmitter<Authenticate>();
+
+  login(authenticate: Authenticate) {
+    this.submit.emit(authenticate);
   }
 }

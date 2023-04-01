@@ -1,5 +1,7 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component } from '@angular/core';
+import {AuthService} from "../../services/auth/auth.service";
 import {Authenticate} from "@demo-app/data-models";
+
 
 @Component({
   selector: 'demo-app-login',
@@ -8,10 +10,9 @@ import {Authenticate} from "@demo-app/data-models";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent {
-  // eslint-disable-next-line @angular-eslint/no-output-native
-  @Output() submit = new EventEmitter<Authenticate>();
+  constructor(private authService: AuthService) {}
 
   login(authenticate: Authenticate) {
-    this.submit.emit(authenticate);
+    this.authService.login(authenticate).subscribe();
   }
 }
